@@ -271,6 +271,12 @@ input, select, textarea {
 		text-align: right;
 	}
 
+	.image-title {
+		display: flex;
+		align-items: center;
+		gap: 0.4em;
+	}
+
 /* Button */
 
 	input[type="submit"],
@@ -1350,3 +1356,5 @@ input, select, textarea {
 				}
 
 		}
+
+
