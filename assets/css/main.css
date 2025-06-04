@@ -277,6 +277,15 @@ input, select, textarea {
 		gap: 0.4em;
 	}
 
+	.image-title a i {
+		color: rgba(255, 255, 255, 0.5);
+		transition: color 0.3s;
+	}
+
+	.image-title a i:hover {
+		color: rgba(255, 255, 255, 0.8);
+	}
+
 /* Button */
 
 	input[type="submit"],
