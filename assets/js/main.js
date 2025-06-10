@@ -488,7 +488,7 @@ var main = (function($) { var _ = {
 			breakpoints.on('>xsmall', function() {
 
 				if (_.current === null)
-					_.switchTo(0, true);
+					_.switchTo(_.slides.length - 1, true);
 
 			});
 
