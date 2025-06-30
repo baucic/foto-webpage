@@ -1386,6 +1386,25 @@ input, select, textarea {
 }
 
 
+/** Dodano za prikaz na mobu **/
+.mobile-only {
+	display: none;
+}
+
+.desktop-only {
+	display: inline;
+}
+
+@media (max-width: 768px) {
+	.mobile-only {
+		display: inline;
+	}
+	.desktop-only {
+		display: none;
+	}
+}
+
+
 
 
 
