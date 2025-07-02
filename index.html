@@ -34,9 +34,21 @@
 						</div>
 					</header>
 
+
+				<div style="margin: 2rem 0; text-align: center;">
+					<label for="galleryFilter" style="font-weight: bold;">Odaberi galeriju:</label>
+					<select id="galleryFilter" style="margin-left: 1rem;">
+						<option value="fineart">Fine Art</option>
+						<option value="street">Street</option>
+						<option value="architectural">Architectural</option>
+						<option value="landscape">Landscape</option>
+						<option value="doc">Documentary</option>
+					</select>
+				</div>
+
 				<!-- Thumbnail -->
 					<section id="thumbnails">
-						<article>
+						<article data-gallery="doc">
 							<a class="thumbnail" href="images/fulls/03.jpg" data-position="top center" download><img src="images/thumbs/03.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Punta Mika</span>
@@ -49,7 +61,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="doc">
 							<a class="thumbnail" href="images/fulls/08.jpg" data-position="top center" download><img src="images/thumbs/08.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Perivoj Vladimira Nazora</span>
@@ -62,7 +74,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="architectural">
 							<a class="thumbnail" href="images/fulls/09.jpg" data-position="top center" download><img src="images/thumbs/09.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Zgrada Sveučilišta u Zadru</span>
@@ -75,7 +87,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="architectural">
 							<a class="thumbnail" href="images/fulls/11.jpg" data-position="top center" download><img src="images/thumbs/11.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Sveti Donat i Stošija</span>
@@ -88,7 +100,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="doc">
 							<a class="thumbnail" href="images/fulls/12.jpg" data-position="top center" download><img src="images/thumbs/12.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Muraj Zadar</span>
@@ -101,7 +113,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="landscape">
 							<a class="thumbnail" href="images/fulls/13.jpg" data-position="top center" download><img src="images/thumbs/13.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Dechsendorfer Weiher</span>
@@ -114,20 +126,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/14.jpg" data-position="top center" download><img src="images/thumbs/14.jpg" alt="" /></a>
-							<h2 class="image-title">
-								<span>Dječak u šumi</span>
-								<a href="images/fulls/14.jpg" download title="Download">
-									<i class="fa-solid fa-download"></i>
-								</a>
-								<a href="images/fulls/14.jpg" target="_blank" title="Open in new tab" rel="noopener">
-									<i class="fa-solid fa-up-right-from-square"></i>
-								</a>
-							</h2>
-							<p></p>
-						</article>
-						<article>
+						<article data-gallery="landscape">
 							<a class="thumbnail" href="images/fulls/16.jpg" data-position="top center" download><img src="images/thumbs/16.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Exerzierplatz</span>
@@ -140,7 +139,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="street">
 							<a class="thumbnail" href="images/fulls/01.jpg" data-position="top center" download><img src="images/thumbs/01.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Lorca Bar Bundek</span>
@@ -153,7 +152,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="landscape">
 							<a class="thumbnail" href="images/fulls/04.jpg" data-position="top center" download><img src="images/thumbs/04.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Sunburst</span>
@@ -166,7 +165,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="fineart">
 							<a class="thumbnail" href="images/fulls/02.jpg" data-position="top center" download><img src="images/thumbs/02.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>DV Vruljica</span>
@@ -179,7 +178,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="fineart">
 							<a class="thumbnail" href="images/fulls/15.jpg" data-position="top center" download><img src="images/thumbs/15.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Iza dvorane</span>
@@ -192,7 +191,7 @@
 							</h2>
 							<p></p>
 						</article>
-						<article>
+						<article data-gallery="fineart">
 							<a class="thumbnail" href="images/fulls/17.jpg" data-position="top center" download><img src="images/thumbs/17.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Kod pet nebodera</span>
@@ -206,7 +205,7 @@
 							<p></p>
 						</article>
 
-						<article>
+						<article data-gallery="fineart">
 							<a class="thumbnail desktop-only" href="images/fulls/19.jpg" data-position="top center" download>
 								<img src="images/thumbs/19.jpg" alt="" />
 							</a>
@@ -223,7 +222,7 @@
 							<p></p>
 						</article>
 
-						<article>
+						<article data-gallery="landscape">
 							<a class="thumbnail" href="images/fulls/18.jpg" data-position="top center" download><img src="images/thumbs/18.jpg" alt="" /></a>
 							<h2 class="image-title">
 								<span>Bara - Vruljica</span>
@@ -238,19 +237,36 @@
 						</article>
 
 
-					<article>
-						<a class="thumbnail" href="images/fulls/20.jpg" data-position="top center" download><img src="images/thumbs/20.jpg" alt="" /></a>
-						<h2 class="image-title">
-							<span>INA</span>
-							<a href="images/fulls/20.jpg" download title="Download">
-								<i class="fa-solid fa-download"></i>
-							</a>
-							<a href="images/fulls/20.jpg" target="_blank" title="Open in new tab" rel="noopener">
-								<i class="fa-solid fa-up-right-from-square"></i>
-							</a>
-						</h2>
-						<p></p>
-					</article>
+
+
+						<article data-gallery="doc">
+							<a class="thumbnail" href="images/fulls/21.jpg" data-position="top center" download><img src="images/thumbs/21.jpg" alt="" /></a>
+							<h2 class="image-title">
+								<span>HYATT</span>
+								<a href="images/fulls/21.jpg" download title="Download">
+									<i class="fa-solid fa-download"></i>
+								</a>
+								<a href="images/fulls/21.jpg" target="_blank" title="Open in new tab" rel="noopener">
+									<i class="fa-solid fa-up-right-from-square"></i>
+								</a>
+							</h2>
+							<p></p>
+						</article>
+
+						<article data-gallery="fineart">
+							<a class="thumbnail" href="images/fulls/20.jpg" data-position="top center" download><img src="images/thumbs/20.jpg" alt="" /></a>
+							<h2 class="image-title">
+								<span>INA</span>
+								<a href="images/fulls/20.jpg" download title="Download">
+									<i class="fa-solid fa-download"></i>
+								</a>
+								<a href="images/fulls/20.jpg" target="_blank" title="Open in new tab" rel="noopener">
+									<i class="fa-solid fa-up-right-from-square"></i>
+								</a>
+							</h2>
+							<p></p>
+						</article>
+
 				</section>
 
 				<!-- Footer -->
@@ -272,5 +288,55 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/main.js"></script>
+
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const filter = document.getElementById("galleryFilter");
+				const thumbnails = document.getElementById("thumbnails");
+				const articles = thumbnails.querySelectorAll("article");
+
+				// Sakrij sve prije inicijalnog rendera
+				thumbnails.style.display = "none";
+
+				function applyFilter() {
+					const selected = filter.value;
+					let lastVisible = null;
+
+					articles.forEach(article => {
+						const gallery = article.getAttribute("data-gallery");
+						if (gallery === selected) {
+							article.style.display = "";
+							lastVisible = article;
+						} else {
+							article.style.display = "none";
+						}
+					});
+
+					const visibleArticles = Array.from(document.querySelectorAll("#thumbnails article"))
+							.filter(article => article.style.display !== "none");
+
+					if (visibleArticles.length > 0) {
+						const lastVisible = visibleArticles[visibleArticles.length - 1];
+						const link = lastVisible.querySelector("a.thumbnail");
+						if (link) link.click();
+					}
+				}
+
+				filter.addEventListener("change", applyFilter);
+
+				// Inicijalno postavi na "art" i primijeni filter
+				filter.value = "fineart";
+				applyFilter();
+
+				// Prikaži sadržaj i skrolaj tek nakon što se primijeni filter
+				setTimeout(() => {
+					thumbnails.style.display = "";
+				}, 50);
+			});
+		</script>
+
+
+
 	</body>
 </html>
