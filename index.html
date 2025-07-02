@@ -316,7 +316,7 @@
 					const visibleArticles = Array.from(document.querySelectorAll("#thumbnails article"))
 							.filter(article => article.style.display !== "none");
 
-					if (visibleArticles.length > 0) {
+					if (window.innerWidth > 768 && visibleArticles.length > 0) {
 						const lastVisible = visibleArticles[visibleArticles.length - 1];
 						const link = lastVisible.querySelector("a.thumbnail");
 						if (link) link.click();
