@@ -540,8 +540,7 @@ var main = (function($) { var _ = {
 
 			// Thumbnail.
 				newSlide.$parent
-					.addClass('active')
-					.focus();
+					.addClass('active');
 
 			// Slide.
 				var f = function() {
