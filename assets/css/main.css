@@ -1386,6 +1386,17 @@ input, select, textarea {
 }
 
 
+.about-me-wrapper {
+	margin: 2rem auto;
+	max-width: 400px;
+	text-align: left;
+}
+
+.about-me-wrapper label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+}
 
 
 .gallery-select-wrapper {
