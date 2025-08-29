@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 	</head>
 	<body class="is-preload-0 is-preload-1 is-preload-2">
 
@@ -20,10 +22,9 @@
 
 				<!-- Header -->
 					<header id="header" style="display: flex; align-items: center; gap: 1rem;">
-						<img src="images/thumbs/fulir.jpg" alt="Gospon Fulir" style="width: 120px; height: 120px; border-radius: 50%;" />
-						<div style="text-align: left;">
-							<!--<h1>Šnel-Fotograf</h1> -->
-							<p><b>Ja prosim, nisam nikakav šnel-fotograf</b></p>
+						<img id="rotator-img" src="images/thumbs/fulir.jpg" alt="Gospon Fulir" style="width: 120px; height: 120px; border-radius: 50%;" />
+						<div class="text" style="text-align: left;">
+							<p id="rotator-text"><b>Ja, prosim, nisam nikakav šnel-fotograf</b></p>
 							<!--						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
@@ -33,7 +34,7 @@
 						</div>
 					</header>
 				<div class="about-me-wrapper">
-				<label for="gallerySelector">About me:<h3>I developed them myself in my dark room. Would you like to see? But keep in mind that I like to remember things my own way. How I remembered them, not necessarily the way they happened</h3></label>
+				<label for="gallerySelector">About me:<h3>I developed them myself in my dark room. Would you like to see?</h3></label>
 				</div>
 				<div class="gallery-select-wrapper">
 					<select id="gallerySelector" onchange="location = this.value;">
@@ -94,6 +95,8 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/main.js"></script>
+
+
 
 
 	</body>

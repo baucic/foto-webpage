@@ -743,3 +743,91 @@ var main = (function($) { var _ = {
 	},
 
 }; return _; })(jQuery); main.init();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	const slides = [
+		{ src: 'images/thumbs/fulir.jpg',  alt: 'Gospon Fulir',
+			text: 'Ja, prosim, nisam nikakav šnel-fotograf' },
+		{ src: 'images/thumbs/davola.jpg', alt: 'Gospon Fulir (drugi portret)',
+			text: 'Have a hair on my tongue. Can\'t get it off, you know how much I hate that?' },
+		{ src: 'images/thumbs/fred.jpg', alt: 'Gospon Fulir (drugi portret)',
+			text: 'I like to remember things my own way. How I remembered them, not necessarily the way they happened' }
+	];
+
+	const header = document.getElementById('header');
+	const imgEl  = document.getElementById('rotator-img');
+	const textEl = document.getElementById('rotator-text');
+
+	const DURATION = 8000;
+	const FADE = 2000;
+
+	function applySlide(idx) {
+		const s = slides[idx];
+		imgEl.alt = s.alt || '';
+		imgEl.src = s.src;
+		textEl.innerHTML = '<b>' + s.text + '</b>';
+	}
+
+	slides.forEach(s => { const im = new Image(); im.src = s.src; });
+
+	function lockHeaderHeight() {
+		const ghost = textEl.cloneNode(true);
+		ghost.removeAttribute('id');
+		ghost.style.position = 'absolute';
+		ghost.style.left = '-9999px';
+		ghost.style.top = '0';
+		ghost.style.visibility = 'hidden';
+		ghost.style.height = 'auto';
+		ghost.style.width = textEl.getBoundingClientRect().width + 'px';
+		header.appendChild(ghost);
+
+		let maxH = Math.max(imgEl.offsetHeight, header.offsetHeight);
+		for (const s of slides) {
+			ghost.innerHTML = '<b>' + s.text + '</b>';
+			maxH = Math.max(maxH, ghost.offsetHeight, imgEl.offsetHeight);
+		}
+
+		header.removeChild(ghost);
+		header.style.height = maxH + 'px';
+	}
+
+	function fitTextToHeader() {
+		// reset na osnovni font pa smanjuj dok sve ne stane u visinu headera
+		textEl.style.fontSize = '';
+		const maxH = header.clientHeight;
+		let size = parseFloat(getComputedStyle(textEl).fontSize);
+		const min = 12;    // minimalni font u px (promijeni po želji)
+		let guard = 0;
+
+		// ako preveliko, smanjuj po 1px dok ne stane
+		while (textEl.scrollHeight > maxH && size > min && guard < 200) {
+			size -= 1;
+			textEl.style.fontSize = size + 'px';
+			guard++;
+		}
+	}
+
+
+	let i = Math.floor(Math.random() * slides.length);
+	applySlide(i);
+	lockHeaderHeight();
+	fitTextToHeader();
+	window.addEventListener('resize', () => {
+		lockHeaderHeight();
+		fitTextToHeader(); // ⇦ dodaj ovaj poziv
+	});
+
+
+	function nextSlide() {
+		header.classList.add('is-fading');
+		i = (i + 1) % slides.length;
+		setTimeout(() => {
+			applySlide(i);
+			fitTextToHeader();
+			header.classList.remove('is-fading');
+		}, FADE);
+	}
+
+	setInterval(nextSlide, DURATION);
+});

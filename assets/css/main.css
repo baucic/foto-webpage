@@ -943,6 +943,8 @@ input, select, textarea {
 
 /* Header */
 
+#header .text p { margin: 0; line-height: 1.2; }
+
 	#header {
 		padding: 3em 2.25em 1.75em 2.25em ;
 	}
@@ -1427,7 +1429,27 @@ input, select, textarea {
 	-webkit-appearance: none;
 }
 
+:root { --fade-in: 800ms; --fade-out: 300ms; }
 
+#header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	opacity: 1;
+	transition: opacity var(--fade-in) ease;
+}
+#header.is-fading {
+	opacity: 0;
+	transition-duration: var(--fade-out);
+}
+
+#header img {
+	width: 120px; height: 120px;
+	min-width: 120px; min-height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+#header .text { text-align: left; max-width: 38ch; }
 
 
 
