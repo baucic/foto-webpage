@@ -751,6 +751,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			text: 'Ja, prosim, nisam nikakav šnel-fotograf' },
 		{ src: 'images/thumbs/davola.jpg', alt: 'Gospon Fulir (drugi portret)',
 			text: 'Have a hair on my tongue. Can\'t get it off, you know how much I hate that?' },
+		{ src: 'images/thumbs/fulir2.jpeg',  alt: 'Gospon Fulir',
+			text: 'Ne snimam za nofce. Ja snimam iz umjetničkog užitka' },
 		{ src: 'images/thumbs/fred.jpg', alt: 'Gospon Fulir (drugi portret)',
 			text: 'I like to remember things my own way. How I remembered them, not necessarily the way they happened' }
 	];
