@@ -759,7 +759,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const imgEl  = document.getElementById('rotator-img');
 	const textEl = document.getElementById('rotator-text');
 
-	const DURATION = 10000;
+	const DURATION = 12000;
 	const FADE = 2000;
 
 	function applySlide(idx) {
