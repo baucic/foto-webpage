@@ -747,14 +747,16 @@ var main = (function($) { var _ = {
 
 document.addEventListener('DOMContentLoaded', () => {
 	const slides = [
-		{ src: 'images/thumbs/fulir.jpg',  alt: 'Gospon Fulir',
+		{ src: 'images/thumbs/fulir.jpg',  alt: 'Fulir',
 			text: 'Ja, prosim, nisam nikakav šnel-fotograf' },
-		{ src: 'images/thumbs/davola2.png', alt: 'Gospon Fulir (drugi portret)',
-			text: 'I developed them myself in my dark room. Would you like to see? ' },
-		{ src: 'images/thumbs/fulir2.jpeg',  alt: 'Gospon Fulir',
+		{ src: 'images/thumbs/davola2.png', alt: 'Davola',
+			text: 'I developed them myself in my dark room. Would you like to see?' },
+		{ src: 'images/thumbs/fulir2.jpeg',  alt: 'Fulir',
 			text: 'Ne snimam za nofce. Ja snimam iz umjetničkog užitka' },
-		{ src: 'images/thumbs/fred.jpg', alt: 'Gospon Fulir (drugi portret)',
-			text: 'I like to remember things my own way. How I remembered them, not necessarily the way they happened' }
+		{ src: 'images/thumbs/fred.jpg', alt: 'Fred',
+			text: 'I like to remember things my own way. How I remembered them, not necessarily the way they happened' },
+		{ src: 'images/thumbs/davola.jpg', alt: 'Davola',
+			text: 'Have a hair on my tongue. Can\'t get it off, you know how much I hate that?' }
 	];
 
 	const header = document.getElementById('header');
