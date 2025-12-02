@@ -31,35 +31,16 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .gallery {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .container {
-                padding: 10px;
-                border: none;
-            }
-
-            body {
-                padding: 10px 0;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
         }
 
         .gallery img {
             width: 100%;
             height: auto;
-            cursor: pointer;
+            display: block;
             border-radius: 4px;
+            cursor: pointer;
         }
 
         #imageModal {
@@ -79,59 +60,6 @@
             max-width: 90%;
             max-height: 90%;
         }
-
-
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            justify-items: center;
-            align-items: center;
-        }
-
-        .gallery img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-            border-radius: 4px;
-        }
-
-        .horizontal {
-            height: 260px;
-            width: auto;
-        }
-
-        .vertical {
-            height: 380px;
-            width: auto;
-        }
-
-        @media (max-width: 600px) {
-            .gallery {
-                grid-template-columns: 1fr;
-                gap: 10px;
-                justify-items: center;
-                align-items: center;
-            }
-
-            .horizontal {
-                height: auto;
-                width: 100%;
-                aspect-ratio: 4 / 3;
-            }
-
-            .vertical {
-                height: auto;
-                width: 100%;
-                aspect-ratio: 3 / 4;
-            }
-        }
-
-
     </style>
 </head>
 <body>
@@ -143,30 +71,30 @@
 <div class="container">
     <h1>Advent u Zadru 27.11.2025</h1>
     <div class="gallery">
-        <img src="share/20251127/01.jpg" class="gallery-image horizontal">
-        <img src="share/20251127/02.jpg" class="gallery-image horizontal">
-        <img src="share/20251127/07.jpg" class="gallery-image horizontal">
-        <img src="share/20251127/08.jpg" class="gallery-image horizontal">
-        <img src="share/20251127/03.jpg" class="gallery-image vertical">
+        <img src="share/20251127/01.jpg">
+        <img src="share/20251127/02.jpg">
+        <img src="share/20251127/07.jpg">
+        <img src="share/20251127/08.jpg">
+        <img src="share/20251127/03.jpg">
     </div>
 </div>
 
 <div class="container">
     <h1>Advent u Zadru 29.11.2025</h1>
     <div class="gallery">
-        <img src="share/20251127/04.jpg" class="gallery-image horizontal">
-        <img src="share/20251127/05.jpg" class="gallery-image horizontal">
-        <img src="share/20251127/06.jpg" class="gallery-image vertical">
+        <img src="share/20251127/04.jpg">
+        <img src="share/20251127/05.jpg">
+        <img src="share/20251127/06.jpg">
     </div>
 </div>
 
 <div class="container">
     <h1>Advent u Zadru 30.11.2025</h1>
     <div class="gallery">
-        <img src="share/20251127/09.jpg" class="gallery-image horizontal">
-        <img src="share/20251127/10.jpg" class="gallery-image horizontal">
-        <img src="images/fulls/10.jpg" class="gallery-image horizontal">
-        <img src="share/20251127/11.jpg" class="gallery-image horizontal">
+        <img src="share/20251127/09.jpg">
+        <img src="share/20251127/10.jpg">
+        <img src="images/fulls/10.jpg">
+        <img src="share/20251127/11.jpg">
     </div>
 </div>
 
