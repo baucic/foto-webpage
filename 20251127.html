@@ -16,7 +16,7 @@
         .container {
             width: 100%;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 0 auto 40px auto;
             background: #ffffff;
             padding: 20px;
             box-sizing: border-box;
@@ -29,16 +29,16 @@
             font-size: 24px;
         }
 
-        .gallery-image {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
         @media (max-width: 600px) {
-            body {
-                padding: 10px 0;
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 10px;
             }
 
             .container {
@@ -46,37 +46,153 @@
                 border: none;
             }
 
+            body {
+                padding: 10px 0;
+            }
+
             h1 {
                 font-size: 20px;
             }
         }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #imageModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #imageModal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .gallery img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .horizontal {
+            height: 260px;
+            width: auto;
+        }
+
+        .vertical {
+            height: 380px;
+            width: auto;
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                justify-items: center;
+                align-items: center;
+            }
+
+            .horizontal {
+                height: auto;
+                width: 100%;
+                aspect-ratio: 4 / 3;
+            }
+
+            .vertical {
+                height: auto;
+                width: 100%;
+                aspect-ratio: 3 / 4;
+            }
+        }
+
+
     </style>
 </head>
 <body>
 
+<div id="imageModal" onclick="closeImage()">
+    <img id="modalImg" src="">
+</div>
+
 <div class="container">
     <h1>Advent u Zadru 27.11.2025</h1>
-    <img src="share/20251127/01.jpg" alt="Advent u Zadru 27.11.2025" class="gallery-image">
-    <img src="share/20251127/02.jpg" lt="Advent u Zadru 27.11.2025" class="gallery-image">
-    <img src="share/20251127/03.jpg" lt="Advent u Zadru 27.11.2025" class="gallery-image">
-    <img src="share/20251127/07.jpg" lt="Advent u Zadru 27.11.2025" class="gallery-image">
-    <img src="share/20251127/08.jpg" lt="Advent u Zadru 27.11.2025" class="gallery-image">
+    <div class="gallery">
+        <img src="share/20251127/01.jpg" class="gallery-image horizontal">
+        <img src="share/20251127/02.jpg" class="gallery-image horizontal">
+        <img src="share/20251127/07.jpg" class="gallery-image horizontal">
+        <img src="share/20251127/08.jpg" class="gallery-image horizontal">
+        <img src="share/20251127/03.jpg" class="gallery-image vertical">
+    </div>
 </div>
 
 <div class="container">
     <h1>Advent u Zadru 29.11.2025</h1>
-    <img src="share/20251127/04.jpg" lt="Advent u Zadru 29.11.2025" class="gallery-image">
-    <img src="share/20251127/05.jpg" lt="Advent u Zadru 29.11.2025" class="gallery-image">
-    <img src="share/20251127/06.jpg" lt="Advent u Zadru 29.11.2025" class="gallery-image">
+    <div class="gallery">
+        <img src="share/20251127/04.jpg" class="gallery-image horizontal">
+        <img src="share/20251127/05.jpg" class="gallery-image horizontal">
+        <img src="share/20251127/06.jpg" class="gallery-image vertical">
+    </div>
 </div>
 
 <div class="container">
     <h1>Advent u Zadru 30.11.2025</h1>
-    <img src="share/20251127/09.jpg" lt="Advent u Zadru 30.11.2025" class="gallery-image">
-    <img src="share/20251127/10.jpg" lt="Advent u Zadru 30.11.2025" class="gallery-image">
-    <img src="images/fulls/10.jpg" lt="Advent u Zadru 30.11.2025" class="gallery-image">
-    <img src="share/20251127/11.jpg" lt="Advent u Zadru 30.11.2025" class="gallery-image">
+    <div class="gallery">
+        <img src="share/20251127/09.jpg" class="gallery-image horizontal">
+        <img src="share/20251127/10.jpg" class="gallery-image horizontal">
+        <img src="images/fulls/10.jpg" class="gallery-image horizontal">
+        <img src="share/20251127/11.jpg" class="gallery-image horizontal">
+    </div>
 </div>
+
+<script>
+    let lastScrollY = 0;
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+        img.addEventListener('click', () => {
+            lastScrollY = window.scrollY;
+            document.getElementById('modalImg').src = img.src;
+            document.getElementById('imageModal').style.display = 'flex';
+            history.pushState({fullscreen: true}, "fullscreen");
+        });
+    });
+
+    function closeImage() {
+        document.getElementById('imageModal').style.display = 'none';
+        history.back();
+        window.scrollTo(0, lastScrollY);
+    }
+
+    window.onpopstate = function() {
+        document.getElementById('imageModal').style.display = 'none';
+        window.scrollTo(0, lastScrollY);
+    };
+</script>
 
 </body>
 </html>
