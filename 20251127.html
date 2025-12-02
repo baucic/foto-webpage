@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             background: #f4f4f4;
             margin: 0;
-            padding: 20px 0;
+            padding: 20px 0 80px 0;
         }
 
         .container {
@@ -21,12 +21,24 @@
             padding: 20px;
             box-sizing: border-box;
             border: 1px solid #ddd;
+            position: relative;
         }
 
         h1 {
             text-align: center;
             margin-top: 0;
             font-size: 24px;
+            position: relative;
+        }
+
+        .info-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 15px;
+            cursor: pointer;
+            user-select: none;
+            color: #555;
         }
 
         .gallery {
@@ -40,36 +52,76 @@
             height: auto;
             display: block;
             border-radius: 4px;
-            cursor: pointer;
         }
 
-        #imageModal {
+        #textModal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.88);
             display: none;
             justify-content: center;
             align-items: center;
-            z-index: 9999;
+            z-index: 99999;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        #imageModal img {
-            max-width: 90%;
-            max-height: 90%;
+        #textBox {
+            background: #fff;
+            max-width: 600px;
+            padding: 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        #textBox a {
+            color: #3366cc;
+        }
+
+        @media (min-width: 900px) {
+            html, body {
+                scroll-snap-type: y proximity;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                justify-items: center;
+            }
+
+            .gallery img {
+                width: auto;
+                max-width: 90vw;
+                max-height: 90vh;
+                scroll-snap-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
-<div id="imageModal" onclick="closeImage()">
-    <img id="modalImg" src="">
+<div id="textModal" onclick="closeTextModal()">
+    <div id="textBox">
+        Sve fotografije na ovoj stranici snimljene su u javnim prostorima u umjetničke i dokumentarne svrhe<br><br>
+        Ako se prepoznate na nekoj fotografiji i ne želite biti javno prikazani, kontaktirajte me na
+        <a href="mailto:mate.baucic@gmail.com">mate.baucic@gmail.com</a> i fotografija će biti odmah uklonjena<br><br>
+        Fotografije nije dopušteno koristiti, kopirati ili distribuirati bez mog prethodnog pismenog odobrenja<br><br>
+        Ova stranica prikazuje selekciju fotografija za brzi pregled i dijeljenje. Cjelovite i profesionalno obrađene galerije dostupne su na
+        <a href="https://foto.mb-info.hr">foto.mb-info.hr</a>
+    </div>
 </div>
 
 <div class="container">
-    <h1>Grupa Vista 27.11.2025</h1>
+    <h1>Grupa Vista 27.11.2025 <span class="info-btn" onclick="openTextModal()">© Contact Info</span></h1>
     <div class="gallery">
         <img src="share/20251127/01.jpg">
         <img src="share/20251127/02.jpg">
@@ -80,7 +132,7 @@
 </div>
 
 <div class="container">
-    <h1>Marko Škugor 29.11.2025</h1>
+    <h1>Marko Škugor 29.11.2025 <span class="info-btn" onclick="openTextModal()">© Contact Info</span></h1>
     <div class="gallery">
         <img src="share/20251127/04.jpg">
         <img src="share/20251127/05.jpg">
@@ -89,7 +141,7 @@
 </div>
 
 <div class="container">
-    <h1>Večer filmske glazbe - DJ Elvis 30.11.2025</h1>
+    <h1>Večer filmske glazbe - DJ Elvis 30.11.2025 <span class="info-btn" onclick="openTextModal()">© Contact Info</span></h1>
     <div class="gallery">
         <img src="share/20251127/09.jpg">
         <img src="share/20251127/10.jpg">
@@ -99,27 +151,12 @@
 </div>
 
 <script>
-    let lastScrollY = 0;
-
-    document.querySelectorAll('.gallery img').forEach(img => {
-        img.addEventListener('click', () => {
-            lastScrollY = window.scrollY;
-            document.getElementById('modalImg').src = img.src;
-            document.getElementById('imageModal').style.display = 'flex';
-            history.pushState({fullscreen: true}, "fullscreen");
-        });
-    });
-
-    function closeImage() {
-        document.getElementById('imageModal').style.display = 'none';
-        history.back();
-        window.scrollTo(0, lastScrollY);
+    function openTextModal() {
+        document.getElementById("textModal").style.display = "flex";
     }
-
-    window.onpopstate = function() {
-        document.getElementById('imageModal').style.display = 'none';
-        window.scrollTo(0, lastScrollY);
-    };
+    function closeTextModal() {
+        document.getElementById("textModal").style.display = "none";
+    }
 </script>
 
 </body>
