@@ -756,7 +756,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		{ src: 'images/thumbs/fred.jpg', alt: 'Fred',
 			text: 'I like to remember things my own way. How I remembered them, not necessarily the way they happened' },
 		{ src: 'images/thumbs/davola.jpg', alt: 'Davola',
-			text: 'Have a hair on my tongue. Can\'t get it off, you know how much I hate that?' }
+			text: 'Have a hair on my tongue. Can\'t get it off, you know how much I hate that?' },
+		{ src: 'images/thumbs/tito.jpeg', alt: 'Tito',
+			text: 'Ništa nije toliko sveto da ne može da bude prevaziđeno' }
 	];
 
 	const header = document.getElementById('header');
