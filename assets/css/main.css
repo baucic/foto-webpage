@@ -1453,8 +1453,6 @@ input, select, textarea {
 }
 #header .text { text-align: left; max-width: 38ch; }
 
-
-
 .gallery-select-wrapper {
 	margin-top: 0.4rem;
 }
@@ -1480,6 +1478,7 @@ input, select, textarea {
 	font-weight: 700;
 	opacity: 0.85;
 	animation: unifiedPulse 1.6s ease-in-out infinite;
+	color: darkred;
 }
 
 @keyframes unifiedPulse {
