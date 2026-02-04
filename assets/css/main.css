@@ -1494,6 +1494,12 @@ input, select, textarea {
 	}
 }
 
+@media (pointer: fine) {
+	.share-image {
+		display: none;
+	}
+}
+
 
 
 
