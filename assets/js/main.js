@@ -144,7 +144,7 @@ var main = (function ($) {
 			_.$body = $('body');
 
 			// Thumbnails.
-			_.$thumbnails = $('#thumbnails');
+			_.$thumbnails = $('.thumbnails');
 
 			// Viewer.
 			_.$viewer = $(
@@ -400,7 +400,7 @@ var main = (function ($) {
 				});
 
 			// Create slides from thumbnails.
-			_.$thumbnails.children()
+			_.$thumbnails.find('article')
 				.each(function () {
 
 					var $this = $(this),

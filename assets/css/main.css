@@ -978,7 +978,7 @@ input, select, textarea {
 
 /* Thumbnails */
 
-	#thumbnails {
+	.thumbnails {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -991,14 +991,14 @@ input, select, textarea {
 		background-color: #f0f0f0;
 	}
 
-		#thumbnails article {
+		.thumbnails article {
 			position: relative;
 			width: 50%;
 			background: #101010;
 			outline: 0;
 		}
 
-			#thumbnails article .thumbnail {
+			.thumbnails article .thumbnail {
 				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 				display: block;
 				position: relative;
@@ -1007,12 +1007,12 @@ input, select, textarea {
 				background-color: #f0f0f0;
 			}
 
-				#thumbnails article .thumbnail img {
+				.thumbnails article .thumbnail img {
 					display: block;
 					width: 100%;
 				}
 
-				#thumbnails article .thumbnail:before {
+				.thumbnails article .thumbnail:before {
 					pointer-events: none;
 					-moz-transition: opacity 0.25s ease;
 					-webkit-transition: opacity 0.25s ease;
@@ -1029,21 +1029,21 @@ input, select, textarea {
 					z-index: 1;
 				}
 
-				#thumbnails article .thumbnail:focus:before {
+				.thumbnails article .thumbnail:focus:before {
 					opacity: 0.5;
 				}
 
-			#thumbnails article h2, #thumbnails article p {
+			.thumbnails article h2, .thumbnails article p {
 				display: none;
 			}
 
-			#thumbnails article.active .thumbnail:before {
+			.thumbnails article.active .thumbnail:before {
 				opacity: 1;
 			}
 
 		@media screen and (max-width: 480px) {
 
-			#thumbnails article .thumbnail:before {
+			.thumbnails article .thumbnail:before {
 				display: none;
 			}
 
@@ -1371,7 +1371,7 @@ input, select, textarea {
 		}
 
 
-#thumbnails article .thumbnail {
+.thumbnails article .thumbnail {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1380,7 +1380,7 @@ input, select, textarea {
 	box-sizing: border-box;
 }
 
-#thumbnails article .thumbnail img {
+.thumbnails article .thumbnail img {
 	display: block;
 	max-width: 100%;
 	max-height: 100%;
@@ -1498,6 +1498,17 @@ input, select, textarea {
 	.share-image {
 		display: none;
 	}
+}
+
+.gallery-title {
+	width: 100%;
+	margin: 0.5rem 0 0.5rem;   /* kao label */
+	font-size: 0.9rem;        /* isto kao label */
+	font-weight: 700;         /* bold kao label */
+	text-align: left;
+	padding: 0 0 0.25rem 0;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+	color: #555;
 }
 
 
