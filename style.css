@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #555;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+main {
+    width: 100%;
+}
+
+
+/* =========================
+   INTRO
+   ========================= */
+
+.intro {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px 20px 20px;
+}
+
+
+/* =========================
+   ROTATING LOGO / PHOTO
+   ========================= */
+
+#header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    margin: 0 0 25px 0;
+    padding: 0;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+#header.is-fading {
+    opacity: 0;
+}
+
+#rotator-img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#header .text {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+#rotator-text {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4;
+    color: #555;
+}
+
+
+/* =========================
+   LICENSE
+   ========================= */
+
+.license {
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.license-title {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    color: #555;
+}
+
+.license p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+    color: #666;
+}
+
+
+/* =========================
+   LEGAL / CONTACT
+   ========================= */
+
+.legal-info {
+    margin: 0;
+    padding: 0;
+}
+
+.legal-info p {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #666;
+}
+
+.legal-info a {
+    color: #555;
+    text-decoration: underline;
+}
+
+.legal-info a:hover {
+    color: #000;
+}
+
+.legal-info .copyright {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   CATEGORY SECTION
+   ========================= */
+
+.selection {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+}
+
+
+/* =========================
+   MASONRY GALLERY
+   Pozicije postavlja main.js
+   ========================= */
+
+.gallery {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+.category {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   CATEGORY TITLE
+   ========================= */
+
+.category-title {
+    display: block;
+    margin: 0 0 6px 0;
+    padding: 0;
+    color: #555;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.3;
+    text-decoration: none;
+    border: 0;
+}
+
+.category-title:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   CATEGORY IMAGE LINK
+   ========================= */
+
+.category-image {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    background: transparent;
+}
+
+
+/* =========================
+   THUMBNAILS
+   ========================= */
+
+.category img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+
+/* =========================
+   ADDITIONAL LINKS
+   ========================= */
+
+.additional-links {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto 50px auto;
+    padding: 20px;
+}
+
+.additional-links h2 {
+    margin: 0 0 12px 0;
+    padding: 0 0 8px 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #555;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   MORE LINKS
+   ========================= */
+
+.links-list {
+    display: block;
+    margin: 0;
+    padding: 0 0 0 22px;
+    list-style-type: disc;
+}
+
+.links-list li {
+    margin: 0;
+    padding: 4px 0;
+    color: #555;
+}
+
+.links-list a {
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.35;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.links-list a:hover {
+    color: #000;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media screen and (min-width: 600px) {
+
+    .intro {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #rotator-img {
+        width: 90px;
+        height: 90px;
+        min-width: 90px;
+        min-height: 90px;
+    }
+
+    .selection {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .additional-links {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+/* =========================
+   DESKTOP
+   ========================= */
+
+@media screen and (min-width: 900px) {
+
+    .intro {
+        padding-top: 40px;
+    }
+
+    #rotator-img {
+        width: 100px;
+        height: 100px;
+        min-width: 100px;
+        min-height: 100px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media screen and (max-width: 480px) {
+
+    .intro {
+        padding: 20px 15px 15px 15px;
+    }
+
+    #header {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    #rotator-img {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+        min-height: 70px;
+    }
+
+    #rotator-text {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .license-title {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .license p {
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .legal-info p {
+        font-size: 12px;
+    }
+
+    .selection {
+        padding: 12px 15px;
+    }
+
+    .category-title {
+        margin-bottom: 5px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .additional-links {
+        margin-top: 15px;
+        margin-bottom: 35px;
+        padding: 15px;
+    }
+
+    .additional-links h2 {
+        font-size: 16px;
+    }
+
+    .links-list {
+        padding-left: 20px;
+    }
+
+    .links-list li {
+        padding: 4px 0;
+    }
+
+    .links-list a {
+        font-size: 16px;
+    }
+}
